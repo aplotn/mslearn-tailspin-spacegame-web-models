@@ -38,6 +38,8 @@ steps:
 - task: NuGetCommand@2
   displayName: 'Publish NuGet package'
   inputs:
+    restoreSolution: '$(solution)'
+    packagesdirectory: '..\packages'
     command: push
     publishVstsFeed: 'Space Game - web - Dependencies/Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
